@@ -3,9 +3,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from '@domain/auth/auth.module';
 import { AuthMiddleware } from '@infrastructure/util/middlewares/auth.middleware';
+import { EventModule } from '@application/event/event.module';
 
 @Module({
-  imports: [AuthModule],
+  imports: [AuthModule, EventModule],
   controllers: [AppController],
   providers: [AppService],
 })
